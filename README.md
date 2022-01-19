@@ -5,7 +5,8 @@ small and minimal binary wrist watch build with an AVR controller in C
 1. program is written normal C 
 2. chip is atmega328p, the .hex-file (in the software folder) has to be flashed on the chip
 3. there is a various variety of programmers who can do the job, but easiest ist to hook the chip on an arduino and use it ans an ISP
-3. flashed with avrdude (subs whatever programmer you use):\
+4. to compile the code, use avr-gcc (Makefile not existent anymore)
+5. flashed with avrdude (subs whatever programmer you use):\
 `avrdude -c usbtiny -p m328 -U flash:w:main.hex`
 
 ## hardware
@@ -14,7 +15,7 @@ button is a normal smd button
 
 IMPORTANT: hour-LEDs have to chosen bright (~23500mcd), minuts-LEDs have to be chosen normal brightness (~8600mcd), because Port C power supply fluctuates with the supply on port Binäruhr
 
-PCB is desgined in Eagle. libaries in the folder have to be included! Manufacturer is JLCPCB. (changes are done in the gcode afterwards. to get a clean contact for the Battery)
+PCB was desgined and gerberfiles. libaries in the folder have to be included! Manufacturer is JLCPCB. (changes are done in the gcode afterwards. to get a clean contact for the Battery)
 
 Case and and sticks are manufactured by hand (besides basement -> 3d-printed) with filing and drilling
 
