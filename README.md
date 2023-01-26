@@ -1,6 +1,13 @@
 # binary_watch
 small and minimal binary wrist watch build with an AVR controller in C  
 
+| demo                       | frontal view                        |
+|----------------------------|-------------------------------------|
+| ![demo](./assets/demo.gif) | ![demo](./assets/frontal.png =500x) |
+
+<!-- their is the project still in cloud -->
+<!-- https://myhub.autodesk360.com/ -->
+
 ## software
 1. program is written normal C 
 2. chip is atmega328p, the .hex-file (in the software folder) has to be flashed on the chip
@@ -42,5 +49,7 @@ steel shaft rings not recommended, because if good drilled not necessary)
 1 | battery 2032 3V
 
 ## Note
+
+Makefile first 4 lines maybe must be changed
 
 since i had no experience at this time with coding at all, the code is all over the place but works properly.
