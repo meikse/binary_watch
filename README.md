@@ -10,6 +10,14 @@ small, minimalistic binary wrist watch built with an AVR microcontroller
 
 ## contents
 
+* [software](#software)
+    * [compile](#compile)
+    * [flash](#flash)
+* [circuit](#circuit)
+* [construction](#construction)
+    * [functionality](#functionality)
+* [principle](#principle)
+
 ## software 
 
 As the computing unit for this project an [atmega328p]() is used as a microcontroller.
@@ -88,7 +96,7 @@ The LEDs on port C have to be chosen very bright (~23500 mcd).
 The LEDs on port D have to be chosen more darker (~8600 mcd).
 
 The PCB requires (0805) SMD components which shall not further specified here.
-All electrical components are listed at the [order list](#order_list).
+All electrical components are listed at the order list.
 The [gcode](./hardware/circuit) files for the PCB are stored in the hardware folder as well
 
 ## construction
@@ -111,7 +119,7 @@ The sandwich is tighten due to 4 screws which are counter with nuts.
 
 **Important**, since their is not ground connection between battery and PCB yet, a connector/sleeve must be inserted which is a small pipe that is placed on the lateral surface of a screw hole in the base.
 This screw hole in the base is at the top-left screw position in the [demo.gif](./asserts/demo.gif).
-(The connector/sleeve can also be done by the steel sheet from the [order list](#order_list))
+(The connector/sleeve can also be done by the steel sheet from the order list).
 
 If the sandwich is carefully tighten the connection should be established. The microcontroller needs a few seconds sync with the external crystal.
 If the watch prints 01:00 all steps have been done succesfully
@@ -141,7 +149,8 @@ cut view at the symmetry line of the watch:
 The shafts for the armband are manufactured by hand as well.
 The shaft does not need to be rigidly fixed on its axis, if the 3D printing is done precisely because the shaft should be stiff in them.
 
-### order list
+order list:
+
 |amount|item|
 |-|-|
 1 | chip (atmega328p)
