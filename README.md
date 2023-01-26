@@ -1,11 +1,11 @@
 # binary_watch :watch:
 small, minimalistic binary wrist watch built with an AVR microcontroller
 
-| demo                       | frontal view                        |
-|----------------------------|-------------------------------------|
-| ![demo](./assets/demo.gif) | ![demo](./assets/frontal.png =500x) |
+| demo                       | frontal view                  |
+|----------------------------|-------------------------------|
+| ![demo](./assets/demo.gif) | ![demo](./assets/frontal.png) |
 
-<!-- their is the project still in cloud -->
+<!-- there is the project in cloud, if windows is used-->
 <!-- https://myhub.autodesk360.com/ -->
 
 ## contents
@@ -224,4 +224,6 @@ This is programmed because of aesthetic reasons.
 
 ## TODO
 
-"never change a running system" but maybe rework the `main.c` file for sleepless nights
+> never change a running system
+
+..but maybe rework the `main.c` file to end sleepless nights
