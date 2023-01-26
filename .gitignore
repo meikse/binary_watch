@@ -1,8 +1,10 @@
 # folder
-usbTinyISP/
+Eagle/
+Fusion360/
 
 # files
-ehajo-programmer.txt
+# test.txt
+todo
 
 # formats
 *.f3z
