@@ -1,9 +1,9 @@
 # binary_watch :watch:
 small, minimalistic binary wrist watch built with an AVR microcontroller
 
-| demo                       | frontal view                  |
-|----------------------------|-------------------------------|
-| ![demo](./assets/demo.gif) | ![demo](./assets/frontal.png) |
+| demo                       | frontal view                                   |
+|----------------------------|------------------------------------------------|
+| ![demo](./assets/demo.gif) | <img src="./assets/frontal.png" width="434" /> |
 
 <!-- there is the project in cloud, if windows is used-->
 <!-- https://myhub.autodesk360.com/ -->
