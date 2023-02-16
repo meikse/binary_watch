@@ -35,19 +35,19 @@ volatile uint32_t hr=1;
 
 int main(void)
 {
-  ASSR = (1<<AS2);										  // async mode
-  ACSR = 1<<ACD;											  // save power
+  ASSR = (1<<AS2);                      // async mode
+  ACSR = 1<<ACD;                        // save power
   PRR = 1<<PRTWI|1<<PRTIM0|1<<PRTIM1|11<<PRUSART0|1<<PRADC;
-  TCCR2A = (1<<WGM21);								  // CTC to OCRA
-  OCR2A = 0;													  // no overflow value (full stack)
-  TCCR2B = 1<<CS22|1<<CS21|1<<CS20;		  // prescaler auf 1024
+  TCCR2A = (1<<WGM21);                  // CTC to OCRA
+  OCR2A = 0;                            // no overflow value (full stack)
+  TCCR2B = 1<<CS22|1<<CS21|1<<CS20;     // prescaler auf 1024
 
-  while((ASSR & (1<< TCR2BUB)));		    // sync for first start-up
+  while((ASSR & (1<< TCR2BUB)));        // sync for first start-up
   TIMSK2 = (1<<OCIE2A);
   set_sleep_mode(SLEEP_MODE_PWR_SAVE);  // enable sleep mode 
   sei();                                // enable interrupts
 
-  DDRD = 0b00111111;                    // define I/Os at channels
+  DDRD = 0b00111111;                    // define IOs at channels
   DDRC = 0b00001111;
   DDRB &= ~(1<<taster_1);
 
@@ -57,11 +57,11 @@ int main(void)
   {
     while((ASSR & (1<< TCR2AUB)));
     sleep_mode();
-    TCCR2A = TCCR2A;					          // if not, concurrent interrupts
+    TCCR2A = TCCR2A;                    // if not, concurrent interrupts
 
     /* time calc */
 
-    if(sec<60*(32)){}						        // 32 clk cycles represents 1 second...
+    if(sec<60*(32)){}                   // 32 clk cycles represents 1 second...
     else{sec=0; min++;}                 // ...thus:  min = 59 sec * 32 tiks
     if(min<=59){}
     else {min=0; hr++;}
@@ -70,7 +70,7 @@ int main(void)
 
     /* switch button on/off */ 
 
-    if (con==1){sec=0;}				          // stop counting time 
+    if (con==1){sec=0;}                 // stop counting time 
     else{
       if (PINB & (1<<taster_1))
       {
@@ -85,10 +85,10 @@ int main(void)
         }
         if (jj>=150){                   // long press  (for set-time-mode)
           jj=0;
-          ii=0;					
+          ii=0;
           if (PINB & (1<<taster_1)){
             temp=4;
-            PORTD = 0x00;			          // turn LEDs off for blinking (case 4)
+            PORTD = 0x00;               // turn LEDs off for blinking (case 4)
             PORTC = 0x00;
           }
         }
@@ -126,7 +126,7 @@ int main(void)
         }
         break;
 
-        
+
       case 2:                           // show time and wait a bit 
         if (bb>=150){                   // (begin: temp=2, end: time-indep)
           bb=0;
@@ -142,7 +142,7 @@ int main(void)
         }
         break;
 
-        
+
       case 3:                           // knightrider down 
         if (cc>=1){                     // (begin: temp=1, end: time-indep)
           cc=0;
@@ -176,7 +176,7 @@ int main(void)
         else {
           dd++;
           temp=4;
-          con=1;				                // deact. button instantly until temp=6 
+          con=1;                        // deact. button instantly until temp=6 
         }
         break;
 
@@ -190,7 +190,7 @@ int main(void)
             k=0;
           }
           if (k>=10){
-            PORTD = 0x00;				        // turn LEDs off for blinking again
+            PORTD = 0x00;               // turn LEDs off for blinking again
             PORTC = 0x00;
             k=0;
             temp=6;
@@ -226,10 +226,10 @@ int main(void)
         if (PINB & (1<<taster_1)){      // (begin: temp=6, end: button press)
           hh=0;
           temp=255;
-          con=0;					              // button is now hot...
+          con=0;                        // button is now hot...
         }                               // ... to trigger clk again
         else{
-          PORTD = 0;				            // do not show time here
+          PORTD = 0;                    // do not show time here
           PORTC = 0;
           temp=7;
         }
